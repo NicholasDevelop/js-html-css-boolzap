@@ -31,12 +31,24 @@
     transform: translate( -50%, -50%);
     height: 90%;
     width: 75%;
+    display: flex;
 }
 
 
-/* CONTAINER SECTION RULES  */
-
+/* CONTACT SECTION RULES  */
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+}
 
 
 
 /* CHAT SECTION RULES  */
+.chat-section{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+}
