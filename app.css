@@ -4,3 +4,39 @@
     box-sizing: border-box;
 }
 
+
+
+/* BACKGROUND RULES  */
+.background-site{
+    position: relative;
+    height: 100vh;
+}
+
+.background-top{
+    background-color: #00A884;
+    height: 15%;
+}
+
+.background-bottom{
+    background-color: #E1E1DE;
+    height: 85%;
+}
+
+
+/* GENERAL CONTAINER RULES */
+.general-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    height: 90%;
+    width: 75%;
+}
+
+
+/* CONTAINER SECTION RULES  */
+
+
+
+
+/* CHAT SECTION RULES  */
