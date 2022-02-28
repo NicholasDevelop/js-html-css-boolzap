@@ -6,7 +6,7 @@
 
 
 
-/* BACKGROUND RULES  */
+/* BACKGROUND SITE RULES  */
 .background-site{
     position: relative;
     height: 100vh;
@@ -43,6 +43,26 @@
     height: 100%;
 }
 
+.my-info{
+    height: 50px;
+    background-color: #F0F2F5;
+}
+
+.notification{
+    height: 80px;
+    background-color: #53BDEB;
+}
+
+.search-chat{
+    height: 35px;
+    background-color: #FFFFFF;
+}
+
+.contacts{
+    flex-grow: 1;
+    background-color: #FFFFFF;
+}
+
 
 
 /* CHAT SECTION RULES  */
@@ -51,4 +71,20 @@
     flex-direction: column;
     width: 70%;
     height: 100%;
+    border-left: 1px solid #D1D7DB;
+}
+
+.contact-information{
+    height: 50px;
+    background-color: #F0F2F5;
+}
+
+.chat{
+    flex-grow: 1;
+    background-color: #F0ECE5;
+}
+
+.write-bar{
+    height: 50px;
+    background-color: #F0F2F5;
 }
