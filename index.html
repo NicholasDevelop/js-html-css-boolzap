@@ -13,6 +13,8 @@
 <body>
 
     <div id="app">
+
+        <!-- BACKGROUND SITE -->
         <div class="background-site">
             <div class="background-top"></div>
             <div class="background-bottom"></div>
@@ -20,26 +22,35 @@
 
         <section class="general-container">
 
+            <!-- CONTACT SECTION -->
             <section class="contact-section">
                 <div class="my-info">
                     
                     <figure class="avatar avatar-small">
-                        
+                        <img src="http://carismartes.com.br/assets/global/images/avatars/avatar7_big@2x.png" alt="">
                     </figure>
                     
-                    <span>
-
+                    <span class="my-info-menu">
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
                     </span>
                 </div>
 
                 <div class="notification">
+                    <div class="avatar avatar-small">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
 
+                    <div>
+                        <h4 class="text-big">Ricevi notifiche di nuovi messaggi</h4>
+                        <p class="text-small">Attiva notifiche desktop <i class="fa-solid fa-chevron-right"></i></p>
+                    </div>
                 </div>
 
                 <div class="search-chat">
                     <div class="input-controls">
                         <button>
-
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                         <input type="text" class="input input-search" placeholder="Cerca o inizia una nuova chat">
                     </div>
@@ -49,7 +60,7 @@
                     <li v-for="(element, i) in contacts" class="contact">
                         <div class="contact-avatar">
                             <figure class="avatar">
-
+                                <img :src="element.avatar" alt="">
                             </figure>
                         </div>
 
@@ -63,27 +74,43 @@
             </section>
 
 
-
+            <!-- CHAT SECTION -->
             <section class="chat-section">
-                <div class="contact active-contact">
-                    <div class="contact-avatar">
-                        <figure class="avatar avatar-small">
-
-                        </figure>
+                <div class="active-contact">
+                    <div class="contact">
+                        <div class="contact-avatar">
+                            <figure class="avatar avatar-small">
+                                <img src="" alt="">
+                            </figure>
+                        </div>
+    
+                        <div class="active-contact-info">
+                            <h3 class="contact-name">Michele</h3>
+                            <p class="contact-text">Ultimo accesso oggi alle 9:43</p>
+                        </div>
                     </div>
 
-                    <div class="active-contact-info">
-                        <h3 class="contact-name">Michele</h3>
-                        <p class="contact-text">Ultimo accesso oggi alle 9:43</p>
+                    <div class="active-contact-interaction">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
 
                 <div class="chat">
-
+                    <ul class="chat-messages">
+                        <li class="message send">Ciaone</li>
+                        <li class="message received">Ciaone a te</li>
+                        <li class="message send">Mi piacciono tanto le patatine con il ketchup. E a te invece?</li>
+                        <li class="message send">Ciaone</li>
+                        
+                    </ul>
                 </div>
 
                 <div class="write-bar">
-                    <input type="text" class="input" placeholder="Cerca o inizia una nuova chat">
+                    <i class="fa-solid fa-face-laugh"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <input type="text" class="input" placeholder="Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone"></i>
                 </div>
             </section>
 

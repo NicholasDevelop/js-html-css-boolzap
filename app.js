@@ -4,7 +4,7 @@ const app = new Vue ({
         contacts: [
             {
                 name: 'Michele',
-                avatar: '_1',
+                avatar: 'https://www.w3schools.com/howto/img_avatar.png',
                 visible: true,
                 messages: [
                     {  
@@ -26,7 +26,7 @@ const app = new Vue ({
             },
             {
                 name: 'Fabio',
-                avatar: '_2',
+                avatar: 'https://www.w3schools.com/w3images/avatar2.png',
                 visible: true,
                 messages: [
                     {
@@ -48,7 +48,7 @@ const app = new Vue ({
             },
             {
                 name: 'Samuele',
-                avatar: '_3',
+                avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
                 visible: true,
                 messages: [
                     {
@@ -70,7 +70,7 @@ const app = new Vue ({
             },
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: 'https://www.w3schools.com/w3images/avatar6.png',
                 visible: true,
                 messages: [
                     {

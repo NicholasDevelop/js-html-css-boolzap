@@ -26,7 +26,7 @@ ul, ol{
 
 .search-chat{
     border-bottom: 1px solid #E9EDEF;
-    padding: 7px 7px;
+    padding: 7px 10px;
 }
 
 .input{
@@ -81,11 +81,49 @@ ul, ol{
     background-color: #F0F2F5;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.my-info-menu{
+    display: flex;
+    gap: 30px;
+    padding-right: 20px;
+    color: #54656F;
+    font-size: 18px;
 }
 
 .notification{
     height: 80px;
     background-color: #53BDEB;
+    display: flex;
+    align-items: center;
+}
+
+.notification .avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #53BDEB;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.text-big{
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.text-small{
+    font-size: 13px;
+    color: #111B21;
+}
+
+.text-small i{
+    font-size: 10px;
+    color: #111B21;
 }
 
 .search-chat{
@@ -106,13 +144,10 @@ ul, ol{
     position: absolute;
     border: none;
     background-color: transparent;
-    color: #E9EDEF;
-    left: 10px;
+    color: #8E9AA1;
+    left: 13px;
     top: 50%;
     transform: translateY( -50% );
-}
-
-.input-icon{
     width: 18px;
     height: 18px;
 }
@@ -126,7 +161,7 @@ ul, ol{
     display: flex;
     align-items: center;
     gap: 14px;
-    padding-left: 7px;
+    padding-left: 10px;
 }
 
 .contact-info{
@@ -159,9 +194,20 @@ ul, ol{
     border-left: 1px solid #D1D7DB;
 }
 
-.chat-section .contact{
-    height: 50px;
+.active-contact{
     background-color: #F0F2F5;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.active-contact-interaction{
+    display: flex;
+    gap: 25px;
+    font-size: 18px;
+    color: #54656F;
+    margin-right: 25px;
 }
 
 .chat{
@@ -170,13 +216,16 @@ ul, ol{
     display: flex;
     flex-direction: column;
     padding: 40px;
-    gap: 2px;
-    align-items: center;
+}
+
+.chat-messages{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 .message{
     border-radius: 8px;
-    box-shadow: 0 2px 3px #aaa;
     padding: 7px 7px;
     font-size: 14px;
     max-width: 70%;
@@ -185,7 +234,7 @@ ul, ol{
 }
 
 .message.send{
-    background-color: #00A884;
+    background-color: #D9FDD3;
     align-self: flex-end;
     border-top-right-radius: 0;
 }
@@ -196,15 +245,15 @@ ul, ol{
     border-top-left-radius: 0;
 }
 
-.message.sent + .message.received, .message.received + .message.sent{
-    margin-top: 20px;
+.message.send + .message.received, .message.received + .message.send{
+    margin-top: 15px;
 }
 
-.message.sent::before{
+.message.send::before{
     content: '';
     display: none;
     position: absolute;
-    border: 5px solid green;
+    border: 5px solid #D9FDD3;
     border-right-color: transparent;
     border-bottom-color: transparent;
     top: 0;
@@ -222,20 +271,20 @@ ul, ol{
     right: 100%;
 }
 
-.message.sent:first-child::before, 
-.message.received + .message.sent::before,
+.message.send:first-child::before, 
+.message.received + .message.send::before,
 .message.received:first-child::before,
-.message.sent + .message.received::before{
+.message.send + .message.received::before{
     display: block;
 }
 
-.message.sent:first-child, 
-.message.received + .message.sent{
+.message.send:first-child, 
+.message.received + .message.send{
     border-top-right-radius: 0;
 }
 
 .message.received:first-child::before,
-.message.sent + .message.received::before{
+.message.send + .message.received::before{
     border-top-left-radius: 0;
 }
 
@@ -244,4 +293,11 @@ ul, ol{
     background-color: #F0F2F5;
     display: flex;
     align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.write-bar i{
+    font-size: 20px;
+    color: #54656F;
 }
