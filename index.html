@@ -22,7 +22,14 @@
 
             <section class="contact-section">
                 <div class="my-info">
+                    
+                    <figure class="avatar avatar-small">
+                        
+                    </figure>
+                    
+                    <span>
 
+                    </span>
                 </div>
 
                 <div class="notification">
@@ -30,20 +37,45 @@
                 </div>
 
                 <div class="search-chat">
+                    <div class="input-controls">
+                        <button>
 
+                        </button>
+                        <input type="text" class="input input-search" placeholder="Cerca o inizia una nuova chat">
+                    </div>
                 </div>
 
-                <div class="contacts">
+                <ul class="contacts">
+                    <li v-for="(element, i) in contacts" class="contact">
+                        <div class="contact-avatar">
+                            <figure class="avatar">
 
-                </div>
+                            </figure>
+                        </div>
+
+                        <div class="contact-info">
+                            <h4 class="contact-name">{{element.name}}</h4>
+                            <p class="contact-text">Ultimo messaggio...</p>
+                        </div>
+                    </li>
+                </ul>
 
             </section>
 
 
 
             <section class="chat-section">
-                <div class="contact-information">
+                <div class="contact active-contact">
+                    <div class="contact-avatar">
+                        <figure class="avatar avatar-small">
 
+                        </figure>
+                    </div>
+
+                    <div class="active-contact-info">
+                        <h3 class="contact-name">Michele</h3>
+                        <p class="contact-text">Ultimo accesso oggi alle 9:43</p>
+                    </div>
                 </div>
 
                 <div class="chat">
@@ -51,7 +83,7 @@
                 </div>
 
                 <div class="write-bar">
-                    
+                    <input type="text" class="input" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </section>
 

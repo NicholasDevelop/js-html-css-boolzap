@@ -4,6 +4,38 @@
     box-sizing: border-box;
 }
 
+img{
+    max-width:  100%;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+.avatar{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 49px;
+    height: 49px;
+}
+
+.avatar-small{
+    height: 40px;
+    width: 40px;
+}
+
+.search-chat{
+    border-bottom: 1px solid #E9EDEF;
+    padding: 7px 7px;
+}
+
+.input{
+    border-radius: 8px;
+    line-height: 35px;
+    padding: 0 20px;
+    border: none;
+    width: 100%;
+}
 
 
 /* BACKGROUND SITE RULES  */
@@ -40,12 +72,15 @@
     display: flex;
     flex-direction: column;
     width: 30%;
+    min-width: 300px;
     height: 100%;
 }
 
 .my-info{
     height: 50px;
     background-color: #F0F2F5;
+    display: flex;
+    justify-content: space-between;
 }
 
 .notification{
@@ -54,8 +89,32 @@
 }
 
 .search-chat{
-    height: 35px;
+    height: 50px;
     background-color: #FFFFFF;
+}
+
+.input-search{
+    padding-left: 45px;
+    background-color: #F0F2F5;
+}
+
+.input-controls{
+    position: relative;
+}
+
+.input-controls button{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    color: #E9EDEF;
+    left: 10px;
+    top: 50%;
+    transform: translateY( -50% );
+}
+
+.input-icon{
+    width: 18px;
+    height: 18px;
 }
 
 .contacts{
@@ -63,18 +122,44 @@
     background-color: #FFFFFF;
 }
 
+.contact{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 7px;
+}
+
+.contact-info{
+    border-bottom: 1px solid #E9EDEF;
+    flex-grow: 1;
+    padding: 14px 0;
+    font-size: 14px;
+}
+
+.contact-name{
+    font-weight: 500;
+}
+
+.contact-text{
+    color: lightslategrey;
+    font-size: 13px;
+}
+
+.contact.active{
+    background-color: #aaa;
+}
 
 
 /* CHAT SECTION RULES  */
 .chat-section{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    flex-grow: 1;
     height: 100%;
     border-left: 1px solid #D1D7DB;
 }
 
-.contact-information{
+.chat-section .contact{
     height: 50px;
     background-color: #F0F2F5;
 }
@@ -82,9 +167,81 @@
 .chat{
     flex-grow: 1;
     background-color: #F0ECE5;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 2px;
+    align-items: center;
+}
+
+.message{
+    border-radius: 8px;
+    box-shadow: 0 2px 3px #aaa;
+    padding: 7px 7px;
+    font-size: 14px;
+    max-width: 70%;
+    position: relative;
+    filter: drop-shadow( 0 1px 1px #aaa );
+}
+
+.message.send{
+    background-color: #00A884;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+.message.received{
+    background-color: white;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+.message.sent + .message.received, .message.received + .message.sent{
+    margin-top: 20px;
+}
+
+.message.sent::before{
+    content: '';
+    display: none;
+    position: absolute;
+    border: 5px solid green;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    top: 0;
+    left: 100%;
+}
+
+.message.received::before{
+    content: '';
+    display: none;
+    position: absolute;
+    border: 5px solid white;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    top: 0;
+    right: 100%;
+}
+
+.message.sent:first-child::before, 
+.message.received + .message.sent::before,
+.message.received:first-child::before,
+.message.sent + .message.received::before{
+    display: block;
+}
+
+.message.sent:first-child, 
+.message.received + .message.sent{
+    border-top-right-radius: 0;
+}
+
+.message.received:first-child::before,
+.message.sent + .message.received::before{
+    border-top-left-radius: 0;
 }
 
 .write-bar{
     height: 50px;
     background-color: #F0F2F5;
+    display: flex;
+    align-items: center;
 }
