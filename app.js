@@ -85,9 +85,12 @@ const app = new Vue ({
                     }
                 ],
             },
-        ]
+        ],
+        currentIndex: 0,
     },
     methods: {
-
+        setActiveContact(index) {
+            this.currentIndex = index;
+        }
     }
 })

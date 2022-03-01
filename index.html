@@ -46,7 +46,7 @@
                         <p class="text-small">Attiva notifiche desktop <i class="fa-solid fa-chevron-right"></i></p>
                     </div>
                 </div>
-
+              
                 <div class="search-chat">
                     <div class="input-controls">
                         <button>
@@ -57,7 +57,9 @@
                 </div>
 
                 <ul class="contacts">
-                    <li v-for="(element, i) in contacts" class="contact">
+                    <li v-for="(element, index) in contacts" class="contact" 
+                    @click='setActiveContact(index)'
+                    :class="currentIndex == index ? 'active' : '' ">
                         <div class="contact-avatar">
                             <figure class="avatar">
                                 <img :src="element.avatar" alt="">
@@ -80,12 +82,12 @@
                     <div class="contact">
                         <div class="contact-avatar">
                             <figure class="avatar avatar-small">
-                                <img src="" alt="">
+                                <img :src="contacts[currentIndex].avatar" alt="">
                             </figure>
                         </div>
     
                         <div class="active-contact-info">
-                            <h3 class="contact-name">Michele</h3>
+                            <h3 class="contact-name">{{contacts[currentIndex].name}}</h3>
                             <p class="contact-text">Ultimo accesso oggi alle 9:43</p>
                         </div>
                     </div>
@@ -98,10 +100,7 @@
 
                 <div class="chat">
                     <ul class="chat-messages">
-                        <li class="message send">Ciaone</li>
-                        <li class="message received">Ciaone a te</li>
-                        <li class="message send">Mi piacciono tanto le patatine con il ketchup. E a te invece?</li>
-                        <li class="message send">Ciaone</li>
+                        <li v-for="(element, index) in contacts.messages" class="message send">{{messages}}</li>
                         
                     </ul>
                 </div>
