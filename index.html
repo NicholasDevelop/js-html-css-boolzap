@@ -52,7 +52,7 @@
                         <button>
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="text" v-model='searchContact' 
+                        <input type="text" v-model='searchContact' @keyup="searchContactFunction"
                         class="input input-search" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
@@ -60,7 +60,8 @@
                 <ul class="contacts">
                     <li v-for="(element, index) in contacts" class="contact" 
                     @click='setActiveContact(index)'
-                    :class="currentIndex == index ? 'active' : '' ">
+                    :class="currentIndex == index ? 'active' : '' "
+                    :class="element.visible ? '' : 'invisible' ">
                         <div class="contact-avatar">
                             <figure class="avatar">
                                 <img :src="element.avatar" alt="">
@@ -89,7 +90,9 @@
     
                         <div class="active-contact-info">
                             <h3 class="contact-name">{{contacts[currentIndex].name}}</h3>
-                            <p class="contact-text">Ultimo accesso oggi alle 9:43</p>
+                            <p class="contact-text">L'ultimo messaggio è stato scritto in data 
+                                {{getCurrentData(contacts[currentIndex].messages[contacts[currentIndex].messages.length-1].date)}} alle ore 
+                                {{getHours(contacts[currentIndex].messages[contacts[currentIndex].messages.length-1].date)}}.</p>
                         </div>
                     </div>
 

@@ -98,6 +98,19 @@ const app = new Vue ({
             const hour = date.split(' ')[1];
             return hour.substring(0,5);
         },
+        getCurrentData: function( date ){
+            const currentData = date.split(' ')[0];
+            return currentData.substring(0,10);
+        },
+        searchContactFunction: function(){
+            for(i = 0; i < this.contacts.length; i++){
+                if (this.contacts[i].name.includes(this.searchContact)){
+                    this.contacts[i].visible = true;
+                } else {
+                    this.contacts[i].visible = false;
+                }
+            }
+        },
         createMessage: function( text,status ){
             const d = new Date();
 
