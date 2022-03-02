@@ -162,6 +162,7 @@ ul, ol{
     align-items: center;
     gap: 14px;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 .contact-info{
@@ -231,6 +232,10 @@ ul, ol{
     max-width: 70%;
     position: relative;
     filter: drop-shadow( 0 1px 1px #aaa );
+}
+
+.hour-message{
+    margin-left: 5px;
 }
 
 .message.send{

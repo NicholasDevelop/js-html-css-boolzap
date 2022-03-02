@@ -68,7 +68,7 @@
 
                         <div class="contact-info">
                             <h4 class="contact-name">{{element.name}}</h4>
-                            <p class="contact-text">Ultimo messaggio...</p>
+                            <p class="contact-text">{{element.messages.length}}</p>
                         </div>
                     </li>
                 </ul>
@@ -100,15 +100,19 @@
 
                 <div class="chat">
                     <ul class="chat-messages">
-                        <li v-for="(element, index) in contacts.messages" class="message send">{{messages}}</li>
-                        
+                        <li v-for="element in contacts[currentIndex].messages" 
+                        class="message"
+                        :class="element.status">{{element.text}}   
+                        <span class="hour-message">{{ getHours( element.date ) }}</span>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="write-bar">
                     <i class="fa-solid fa-face-laugh"></i>
                     <i class="fa-solid fa-paperclip"></i>
-                    <input type="text" class="input" placeholder="Scrivi un messaggio">
+                    <input type="text" class="input" placeholder="Scrivi un messaggio" 
+                    @keyup.enter="sendMessage()" v-model="newSendMessage">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </section>
