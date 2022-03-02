@@ -52,7 +52,8 @@
                         <button>
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="text" class="input input-search" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model='searchContact' 
+                        class="input input-search" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
 
@@ -68,7 +69,7 @@
 
                         <div class="contact-info">
                             <h4 class="contact-name">{{element.name}}</h4>
-                            <p class="contact-text">{{element.messages.length}}</p>
+                            <p class="contact-text">{{element.messages[element.messages.length-1].text}}</p>
                         </div>
                     </li>
                 </ul>

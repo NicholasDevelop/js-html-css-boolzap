@@ -88,6 +88,7 @@ const app = new Vue ({
         ],
         currentIndex: 0,
         newSendMessage: '',
+        searchContact: '',
     },
     methods: {
         setActiveContact(index) {
