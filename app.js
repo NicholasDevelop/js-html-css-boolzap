@@ -102,21 +102,33 @@ const app = new Vue ({
             const currentData = date.split(' ')[0];
             return currentData.substring(0,10);
         },
+        getLastMessage: function( contact ){
+            const { messages } = contact;
+
+            if( messages.length === 0 ){
+                return '';
+            }
+            const lastIndex = messages.length -1;
+            const lastMessage = messages[ lastIndex ];
+
+            return lastMessage.text;
+        },
         searchContactFunction: function(){
             for(i = 0; i < this.contacts.length; i++){
-                if (this.contacts[i].name.includes(this.searchContact)){
+                if (this.contacts[i].name.toLowerCase().includes(this.searchContact.toLowerCase())){
                     this.contacts[i].visible = true;
                 } else {
                     this.contacts[i].visible = false;
                 }
             }
-        },
+        },               
         createMessage: function( text,status ){
             const d = new Date();
 
             const newMessage = {
                 status,
                 text,
+                // date: dayjs().format('DD/MM/YYYY HH:mm:ss')
                 date: `${ d.getDate() }/${ d.getMonth()+1 }/${ d.getFullYear() } ${ d.getHours() }:${ d.getMinutes() }:${ d.getSeconds() }`
             }
 

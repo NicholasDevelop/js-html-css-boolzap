@@ -61,7 +61,7 @@
                     <li v-for="(element, index) in contacts" class="contact" 
                     @click='setActiveContact(index)'
                     :class="currentIndex == index ? 'active' : '' "
-                    :class="element.visible ? '' : 'invisible' ">
+                    v-if="element.visible">
                         <div class="contact-avatar">
                             <figure class="avatar">
                                 <img :src="element.avatar" alt="">
@@ -70,7 +70,7 @@
 
                         <div class="contact-info">
                             <h4 class="contact-name">{{element.name}}</h4>
-                            <p class="contact-text">{{element.messages[element.messages.length-1].text}}</p>
+                            <p class="contact-text">{{getLastMessage( element )}}</p>
                         </div>
                     </li>
                 </ul>
